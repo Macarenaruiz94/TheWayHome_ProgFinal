@@ -6,4 +6,4 @@ Breve descripción: El usuario tiene que ayudar a sus amigos extraterrestres a l
 
 Grupo:
 -Ruiz, Macarena
--Gonzales, Claudia
+-Gonzalez, Claudia
