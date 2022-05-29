@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/historia.unity
+    guid: 816ffa5206dbff94b9056927a01983ab
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: d58b4caf28130a248a08fe9ae74a7621
+  - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: 429b48d8e395b0341987cef2b68ed7c6
+  - enabled: 1
+    path: Assets/Scenes/nivel1.unity
+    guid: afdf366dccdb84243ab5b67b3db58563
+  - enabled: 1
+    path: Assets/Scenes/nivel2.unity
+    guid: e5d627b607b0dbb45a3749921ec2b8eb
+  - enabled: 1
+    path: Assets/Scenes/nivel3.unity
+    guid: 676865504ab0ee64b8c95fd5a19a2807
+  - enabled: 1
+    path: Assets/Scenes/nivel4.unity
+    guid: 08c1e2144d4e9c84b8f704cbcd45f1f5
   m_configObjects: {}
