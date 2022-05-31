@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class playerControl1 : playerGeneral
 {
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        
+        Movement();
     }
 
     public override void Movement()
     {
         base.Movement();
 
+        HabilidadEspecial();
+    }
 
+    void HabilidadEspecial()
+    {
+        speed = speed * 2;
     }
 }
