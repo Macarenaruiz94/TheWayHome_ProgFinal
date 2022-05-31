@@ -14,4 +14,11 @@ public class playerControl1 : playerGeneral
     {
         
     }
+
+    public override void Movement()
+    {
+        base.Movement();
+
+
+    }
 }
