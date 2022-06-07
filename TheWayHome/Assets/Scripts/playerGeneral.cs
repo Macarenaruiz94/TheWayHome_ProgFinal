@@ -10,6 +10,7 @@ public abstract class playerGeneral: MonoBehaviour {
     private int Health = 4;
     public string sceneName;
     public Transform LaunchOffset;
+    public GameObject ProyectilPrefab;
     Rigidbody2D rb;
 
     protected virtual void Awake()
@@ -28,7 +29,7 @@ public abstract class playerGeneral: MonoBehaviour {
 
         if (Input.GetButtonDown("Fire1"))
         {
-            //Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
+            Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
         }
     }
 
