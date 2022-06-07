@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public abstract class playerGeneral: MonoBehaviour {
+public abstract class playerGeneral : MonoBehaviour
+{
 
     public float speed;
     public float jump;
@@ -12,6 +14,9 @@ public abstract class playerGeneral: MonoBehaviour {
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
+    private int item = 0;
+
+    [SerializeField] private Text ItemText;
 
     protected virtual void Awake()
     {
@@ -44,6 +49,16 @@ public abstract class playerGeneral: MonoBehaviour {
                 Destroy(gameObject);
                 SceneManager.LoadScene(sceneName);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Destroy(collision.gameObject);
+            item++;
+            ItemText.text = "Item: " + item;
         }
     }
 }
