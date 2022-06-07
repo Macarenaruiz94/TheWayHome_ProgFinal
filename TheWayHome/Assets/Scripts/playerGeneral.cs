@@ -58,7 +58,7 @@ public abstract class playerGeneral : MonoBehaviour
         {
             Destroy(collision.gameObject);
             item++;
-            ItemText.text = "Item: " + item;
+            ItemText.text = "Keys: " + item;
         }
     }
 }
