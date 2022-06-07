@@ -756,8 +756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffd68f287438d549a42edf0cf3b906a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   jump: 4
+  sceneName: 
   LaunchOffset: {fileID: 0}
 --- !u!50 &1511977727
 Rigidbody2D:

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class playerGeneral: MonoBehaviour {
 
     public float speed;
     public float jump;
+    private int Health = 4;
+    public string sceneName;
     public Transform LaunchOffset;
     Rigidbody2D rb;
 
@@ -26,6 +29,20 @@ public abstract class playerGeneral: MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             //Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemigo")
+        {
+            Health -= 1;
+
+            if (Health == 0)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 }
