@@ -7,7 +7,7 @@ public class enemigonivel1 : MonoBehaviour
     public float maxSpeed = 4f;
     public float speed = 4f;
     private Rigidbody2D rb2d;
-    private int Health = 1;
+    private int Health = 2;
 
     void Start()
     {
