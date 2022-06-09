@@ -19,6 +19,6 @@ public class playerControl1 : playerGeneral
 
     void HabilidadEspecial()
     {
-        speed = speed * 2;
+        speed = 12;
     }
 }

@@ -18,6 +18,10 @@ public abstract class playerGeneral : MonoBehaviour
 
     [SerializeField] private Text ItemText;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     protected virtual void Awake()
     {
         Movement();
@@ -29,12 +33,20 @@ public abstract class playerGeneral : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
-            rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
+            Jump();
         }
 
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
+        }
+    }
+
+    public virtual void Jump()
+    {
+        if (Mathf.Abs(rb.velocity.y) < 0.001f)
+        {
+            rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
         }
     }
 
