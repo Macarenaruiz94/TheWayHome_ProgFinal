@@ -1061,11 +1061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d67495692dfc48a539a28d3de6e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  jump: 0
+  speed: 10
+  jump: 90
   sceneName: nivel3
   LaunchOffset: {fileID: 2067412227}
   ProyectilPrefab: {fileID: 7601824250304351894, guid: 16848c69b20224f45b81f5c8c8f42fe6, type: 3}
+  ItemText: {fileID: 0}
 --- !u!70 &1972786951
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

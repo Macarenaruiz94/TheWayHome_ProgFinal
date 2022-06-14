@@ -18,6 +18,6 @@ public class playerControl2 : playerGeneral
 
     void HabilidadEspecial()
     {
-        jump = jump * 2;
+        jump = 10;
     }
 }

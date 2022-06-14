@@ -18,6 +18,6 @@ public class playerControl3 : playerGeneral
 
     void HabilidadEspecial()
     {
-        
+        speed = 12;
     }
 }
