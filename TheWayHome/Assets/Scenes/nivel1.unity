@@ -1761,6 +1761,7 @@ MonoBehaviour:
   LaunchOffset: {fileID: 1858989233}
   ProyectilPrefab: {fileID: 7601824250304351894, guid: 16848c69b20224f45b81f5c8c8f42fe6, type: 3}
   ItemText: {fileID: 628079609}
+  playerData: {fileID: 11400000, guid: b75cee487f4eb504a9d03e604fcc5dd3, type: 2}
 --- !u!50 &1511977727
 Rigidbody2D:
   serializedVersion: 4

@@ -17,7 +17,6 @@ public abstract class playerGeneral : MonoBehaviour
     private int item = 0;
 
     [SerializeField] private Text ItemText;
-    [SerializeField] PlayerData playerData;
 
     private void Start()
     {

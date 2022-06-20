@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18d1c56b69e34243b48bafb707dfaa3, type: 3}
   m_Name: PlayerUno
   m_EditorClassIdentifier: 
-  playerName: 
-  description: 
-  vida: 0
+  playerName: Pino
+  habilidad: Speed x2
+  vida: 5
