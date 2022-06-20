@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemigonivel1 : MonoBehaviour
+public class enemigonivel1 : MonoBehaviour, ITakeDmg
 {
     public float maxSpeed = 4f;
     public float speed = 4f;
@@ -35,16 +35,19 @@ public class enemigonivel1 : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Bala"))
-        {
-            Health -= 1;
 
-            if (Health == 0)
-            {
-                Destroy(gameObject);
-            }
+    public void Hit(int DamageTaken)
+    {
+        Health -= DamageTaken;
+
+        if (Health == 0)
+        {
+            Destroy(gameObject);
         }
+    }
+
+    public void Daño(int DamageTaken)
+    {
+        Hit(DamageTaken);
     }
 }
