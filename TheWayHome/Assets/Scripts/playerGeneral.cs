@@ -9,7 +9,7 @@ public abstract class playerGeneral : MonoBehaviour
 
     public float speed;
     public float jump;
-    private int Health = 4;
+    private int Health = 5;
     public string sceneName;
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
@@ -17,6 +17,7 @@ public abstract class playerGeneral : MonoBehaviour
     private int item = 0;
 
     [SerializeField] private Text ItemText;
+    [SerializeField] PlayerData playerData;
 
     private void Start()
     {
