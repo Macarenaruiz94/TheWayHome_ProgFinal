@@ -14,9 +14,6 @@ public abstract class playerGeneral : MonoBehaviour
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
-    private int item = 0;
-
-    [SerializeField] private Text ItemText;
 
     private void Start()
     {
@@ -61,16 +58,6 @@ public abstract class playerGeneral : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene(sceneName);
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            Destroy(collision.gameObject);
-            item++;
-            ItemText.text = "Keys: " + item;
         }
     }
 }

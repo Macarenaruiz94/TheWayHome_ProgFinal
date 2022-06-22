@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7878780749883577849}
   - component: {fileID: 5688502532840349372}
   - component: {fileID: 8084843806176358841}
+  - component: {fileID: 7272923951686440043}
   m_Layer: 0
   m_Name: itemRed
   m_TagString: Item
@@ -99,3 +100,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.013932705, y: -0.009288311}
   m_Size: {x: 0.8248739, y: 0.84345055}
   m_Direction: 0
+--- !u!114 &7272923951686440043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046123481960614016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae8ab7f5036d524ea59a46edb182d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemText: {fileID: 0}

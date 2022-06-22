@@ -19,6 +19,13 @@ public class starBalaControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ITakeDmg dmg = collision.gameObject.GetComponent<ITakeDmg>();
+
+        if (dmg != null)
+        {
+            dmg.Daño(1);
+        }
+
         Destroy(gameObject);
     }
 }
