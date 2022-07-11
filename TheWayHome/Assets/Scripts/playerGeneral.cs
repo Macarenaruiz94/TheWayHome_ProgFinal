@@ -14,6 +14,8 @@ public abstract class playerGeneral : MonoBehaviour
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
+    public Animator animator;
+    private bool mirandoDerecha = true;
 
     private void Start()
     {
@@ -28,6 +30,17 @@ public abstract class playerGeneral : MonoBehaviour
         var movimiento = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movimiento, 0, 0) * Time.deltaTime * speed;
 
+        animator.SetFloat("speed", Mathf.Abs(movimiento));
+
+        if (movimiento > 0 && !mirandoDerecha)
+        {
+            Girar();
+        }
+        else if (movimiento < 0 && mirandoDerecha)
+        {
+            Girar();
+        }
+
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             Jump();
@@ -37,6 +50,13 @@ public abstract class playerGeneral : MonoBehaviour
         {
             Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
         }
+    }
+    private void Girar()
+    {
+        mirandoDerecha = !mirandoDerecha;
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
     }
 
     public virtual void Jump()
