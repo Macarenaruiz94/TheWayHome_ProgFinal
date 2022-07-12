@@ -12,11 +12,8 @@ public class starBalaControl : MonoBehaviour
 
     void Move()
     {
-        Vector3 temp = transform.position;
-        temp.x += speed * Time.deltaTime;
-        transform.position = temp;
+        transform.position += transform.right * Time.deltaTime * speed;
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         ITakeDmg dmg = collision.gameObject.GetComponent<ITakeDmg>();

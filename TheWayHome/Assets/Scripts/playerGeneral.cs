@@ -48,10 +48,10 @@ public abstract class playerGeneral : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
+            Instantiate(ProyectilPrefab, LaunchOffset.position, transform.rotation);
         }
     }
-    private void Girar()
+    public virtual void Girar()
     {
         mirandoDerecha = !mirandoDerecha;
         Vector3 escala = transform.localScale;
