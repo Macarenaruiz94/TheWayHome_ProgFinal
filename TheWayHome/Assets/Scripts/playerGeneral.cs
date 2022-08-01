@@ -9,6 +9,7 @@ public abstract class playerGeneral : MonoBehaviour
 
     public float speed;
     public float jump;
+    public float movimiento;
     private int Health = 5;
     public string sceneName;
     public Transform LaunchOffset;
@@ -20,17 +21,17 @@ public abstract class playerGeneral : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     protected virtual void Awake()
     {
         Movement();
+        SetAnimationState();
     }
     public virtual void Movement()
     {
-        var movimiento = Input.GetAxisRaw("Horizontal");
+        movimiento = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movimiento, 0, 0) * Time.deltaTime * speed;
-
-        animator.SetFloat("speed", Mathf.Abs(movimiento));
 
         if (movimiento > 0 && !mirandoDerecha)
         {
@@ -78,6 +79,34 @@ public abstract class playerGeneral : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene(sceneName);
             }
+        }
+    }
+
+    public void SetAnimationState()
+    {
+        if (movimiento == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (rb.velocity.y == 0)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+        }
+
+        if (Mathf.Abs(movimiento) == 12 && rb.velocity.y == 0)
+            animator.SetBool("isRunning", true);
+        else
+            animator.SetBool("isRunning", false);
+
+        if (rb.velocity.y > 0)
+            animator.SetBool("isJumping", true);
+
+        if (rb.velocity.y < 0)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
         }
     }
 }
