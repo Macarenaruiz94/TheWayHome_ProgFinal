@@ -28,4 +28,9 @@ public class enemigo3 : MonoBehaviour
             }
         }
     }
+
+    void DeactivateEnemigo()
+    {
+        gameObject.SetActive(false);
+    }
 }
