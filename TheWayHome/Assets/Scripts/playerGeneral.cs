@@ -17,11 +17,13 @@ public abstract class playerGeneral : MonoBehaviour
     Rigidbody2D rb;
     public Animator animator;
     private bool mirandoDerecha = true;
+    private float y;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        y = GetComponent<Rigidbody2D>().velocity.y;
     }
     protected virtual void Awake()
     {
@@ -82,28 +84,28 @@ public abstract class playerGeneral : MonoBehaviour
         }
     }
 
-    public void SetAnimationState()
+    public virtual void SetAnimationState()
     {
         if (movimiento == 0)
         {
             animator.SetBool("isRunning", false);
         }
 
-        if (rb.velocity.y == 0)
+        if (y == 0)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", false);
         }
 
-        if (Mathf.Abs(movimiento) == 12 && rb.velocity.y == 0)
+        if (Mathf.Abs(movimiento) > 5 && y == 0)
             animator.SetBool("isRunning", true);
         else
             animator.SetBool("isRunning", false);
 
-        if (rb.velocity.y > 0)
+        if (y > 0)
             animator.SetBool("isJumping", true);
 
-        if (rb.velocity.y < 0)
+        if (y < 0)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", true);
