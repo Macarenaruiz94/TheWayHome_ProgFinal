@@ -5,6 +5,7 @@ using UnityEngine;
 public class starBalaControl : MonoBehaviour
 {
     public float speed = 5f;
+    public Rigidbody2D rb;
     void Update()
     {
         Move();
@@ -12,7 +13,7 @@ public class starBalaControl : MonoBehaviour
 
     void Move()
     {
-        transform.position += transform.right * Time.deltaTime * speed;
+        rb.velocity = transform.right * speed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

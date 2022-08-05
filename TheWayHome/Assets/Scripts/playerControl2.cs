@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerControl2 : playerGeneral
 {
+    public Transform LaunchOffset2;
     void Update()
     {
         Movement();
@@ -18,6 +19,9 @@ public class playerControl2 : playerGeneral
 
     void HabilidadEspecial()
     {
-        jump = 10;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Instantiate(ProyectilPrefab, LaunchOffset2.position, LaunchOffset2.transform.rotation);
+        }
     }
 }

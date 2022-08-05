@@ -51,7 +51,7 @@ public abstract class playerGeneral : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Instantiate(ProyectilPrefab, LaunchOffset.position, transform.rotation);
+            Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
         }
     }
     public virtual void Girar()
