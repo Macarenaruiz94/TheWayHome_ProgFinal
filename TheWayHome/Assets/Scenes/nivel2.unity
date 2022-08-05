@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   speed: 7
-  Health: 10
+  Health: 20
   target: {fileID: 1703134542}
   agroRange: 10
 --- !u!50 &1410815368
