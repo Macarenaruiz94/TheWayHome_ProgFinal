@@ -6,33 +6,39 @@ public class enemigonivel1 : MonoBehaviour, ITakeDmg
 {
     public float maxSpeed = 4f;
     public float speed = 4f;
-    private Rigidbody2D rb2d;
+    private Rigidbody2D rb;
     private int Health = 2;
+    public Transform target;
+    private bool mirandoDerecha = true;
+    [SerializeField] float agroRange;
 
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        rb2d.AddForce(Vector2.right * speed);
-        float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
-        rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
+        float distToPlayer = Vector2.Distance(transform.position, target.position);
 
-        if (rb2d.velocity.x > -0.01f && rb2d.velocity.x < 0.01f)
+        if (distToPlayer < agroRange)
         {
-            speed = -speed;
-            rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
-        }
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-        if (speed > 0)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            LookPlayer();
         }
-        else if (speed < 0)
+        else
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
+
+    public void LookPlayer()
+    {
+        if ((target.position.x > transform.position.x && !mirandoDerecha) || (target.position.x < transform.position.x && mirandoDerecha))
+        {
+            mirandoDerecha = !mirandoDerecha;
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
         }
     }
 
