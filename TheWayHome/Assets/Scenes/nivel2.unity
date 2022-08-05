@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   speed: 7
-  Health: 2
+  Health: 10
   target: {fileID: 1703134542}
   agroRange: 10
 --- !u!50 &1410815368
@@ -3317,7 +3317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410815366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 112.11, y: -1.1738743, z: 0}
+  m_LocalPosition: {x: 99.8, y: -1.1738743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3401,7 +3401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412440738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.47, y: -3.12, z: -10}
+  m_LocalPosition: {x: -3.22, y: -3.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4754,7 +4754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700900783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.47, y: -3.12, z: -10}
+  m_LocalPosition: {x: -3.22, y: -3.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1303689493}
@@ -4774,7 +4774,6 @@ GameObject:
   - component: {fileID: 1703134543}
   - component: {fileID: 1703134545}
   - component: {fileID: 1703134544}
-  - component: {fileID: 1703134546}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -4841,7 +4840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703134540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.47, y: -3.12, z: 0}
+  m_LocalPosition: {x: -3.22, y: -3.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1296441687}
@@ -4867,7 +4866,6 @@ MonoBehaviour:
   sceneName: nivel2
   LaunchOffset: {fileID: 1296441687}
   ProyectilPrefab: {fileID: 7601824250304351894, guid: 16848c69b20224f45b81f5c8c8f42fe6, type: 3}
-  animator: {fileID: 1703134546}
   LaunchOffset2: {fileID: 1481624007}
 --- !u!50 &1703134544
 Rigidbody2D:
@@ -4906,25 +4904,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.31, y: 1.88}
   m_Direction: 0
---- !u!95 &1703134546
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703134540}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1718168915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,7 +5581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893712713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116.9, y: -4.02, z: 0}
+  m_LocalPosition: {x: 103, y: -4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

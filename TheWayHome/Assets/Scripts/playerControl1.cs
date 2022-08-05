@@ -8,7 +8,6 @@ public class playerControl1 : playerGeneral
     void Update()
     {
         Movement();
-        SetAnimationState();
     }
 
     public override void Movement()

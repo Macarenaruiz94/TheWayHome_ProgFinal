@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boss : MonoBehaviour
+public class boss : MonoBehaviour, ITakeDmg
 {
     public float maxSpeed = 4f;
     public float speed = 4f;

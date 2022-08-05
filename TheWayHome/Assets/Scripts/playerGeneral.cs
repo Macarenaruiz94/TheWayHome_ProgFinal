@@ -15,20 +15,17 @@ public abstract class playerGeneral : MonoBehaviour
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
-    public Animator animator;
     private bool mirandoDerecha = true;
     private float y;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         y = GetComponent<Rigidbody2D>().velocity.y;
     }
     protected virtual void Awake()
     {
         Movement();
-        SetAnimationState();
     }
     public virtual void Movement()
     {
@@ -81,34 +78,6 @@ public abstract class playerGeneral : MonoBehaviour
                 Destroy(gameObject);
                 SceneManager.LoadScene(sceneName);
             }
-        }
-    }
-
-    public virtual void SetAnimationState()
-    {
-        if (movimiento == 0)
-        {
-            animator.SetBool("isRunning", false);
-        }
-
-        if (y == 0)
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
-        }
-
-        if (Mathf.Abs(movimiento) > 5 && y == 0)
-            animator.SetBool("isRunning", true);
-        else
-            animator.SetBool("isRunning", false);
-
-        if (y > 0)
-            animator.SetBool("isJumping", true);
-
-        if (y < 0)
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", true);
         }
     }
 }
