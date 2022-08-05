@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Text: 'Thank you for your help, human friend!
 
 
-    PINO, VIVI, KAROO and CHAPY
-    arrived safely on their planet!'
+    KAROO and CHAPY arrived safely
+    on their planet!'
 --- !u!222 &824781552
 CanvasRenderer:
   m_ObjectHideFlags: 0
