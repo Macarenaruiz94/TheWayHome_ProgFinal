@@ -49,7 +49,7 @@ public abstract class playerGeneral : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Instantiate(ProyectilPrefab, LaunchOffset.position, transform.rotation);
         }
