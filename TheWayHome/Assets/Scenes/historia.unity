@@ -463,10 +463,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'KAROO and CHAPY want to go back to their planet...
+  m_Text: 'KAROO and CHAPPY want to go back to their planet...
 
     Help your friends
-    and guide them trough their way home!'
+    and guide them through their way home!'
 --- !u!222 &587379164
 CanvasRenderer:
   m_ObjectHideFlags: 0
