@@ -7,6 +7,7 @@ TagManager:
   - Bala
   - Item
   - Enemigo
+  - pinchitos
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,10 @@ public class boss : MonoBehaviour, ITakeDmg
     public Transform target;
     private bool mirandoDerecha = true;
     [SerializeField] float agroRange;
+    private float timeBtwShots;
+    [SerializeField] float startTimeBtwShots;
+    [SerializeField] private GameObject EnemigoBala;
+    [SerializeField] private Transform AtackPoint;
 
     void Start()
     {
@@ -31,6 +35,8 @@ public class boss : MonoBehaviour, ITakeDmg
         {
             rb.velocity = new Vector2(0, 0);
         }
+
+        Atacar();
     }
 
     public void LookPlayer()
@@ -55,5 +61,18 @@ public class boss : MonoBehaviour, ITakeDmg
     public void Daño(int DamageTaken)
     {
         Hit(DamageTaken);
+    }
+
+    void Atacar()
+    {
+        if (timeBtwShots <= 0)
+        {
+            Instantiate(EnemigoBala, AtackPoint.position, AtackPoint.transform.rotation);
+            timeBtwShots = startTimeBtwShots;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
     }
 }

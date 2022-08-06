@@ -20,7 +20,7 @@ public class playerControl2 : playerGeneral
 
     void HabilidadEspecial()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             GameObject bullet = Instantiate(ProyectilPrefab);
             bullet.GetComponent<starBalaControl>().Move(mirandoDerecha);

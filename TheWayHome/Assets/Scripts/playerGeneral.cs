@@ -70,6 +70,16 @@ public abstract class playerGeneral : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("pinchitos"))
+        {
+            animator.SetBool("isTakenDmg", true);
+            Destroy(gameObject);
+            SceneManager.LoadScene(sceneName);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemigo")
