@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerDos
   m_EditorClassIdentifier: 
   playerName: Chappy
-  habilidad: Double jump
+  habilidad: Double shoot
   vida: 5
