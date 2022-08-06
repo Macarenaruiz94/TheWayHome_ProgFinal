@@ -9,19 +9,20 @@ public abstract class playerGeneral : MonoBehaviour
 
     public float speed;
     public float jump;
-    public float movimiento;
+    public float movimiento = 1;
+    public Animator animator;
     private int Health = 5;
     public string sceneName;
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
     private bool mirandoDerecha = true;
-    private float y;
+    private bool isHurting;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        y = GetComponent<Rigidbody2D>().velocity.y;
+        animator = GetComponent<Animator>();
     }
     protected virtual void Awake()
     {
@@ -74,12 +75,62 @@ public abstract class playerGeneral : MonoBehaviour
         if (collision.gameObject.tag == "Enemigo")
         {
             Health -= 1;
+            StartCoroutine("Hurt");
 
             if (Health == 0)
             {
+                animator.SetBool("isTakenDmg", true);
                 Destroy(gameObject);
                 SceneManager.LoadScene(sceneName);
             }
+        }
+    }
+    IEnumerator Hurt()
+    {
+        isHurting = true;
+        rb.velocity = Vector2.zero;
+
+        if (mirandoDerecha)
+            rb.AddForce(new Vector2(-200f, 200f));
+        else
+            rb.AddForce(new Vector2(200f, 200f));
+
+        yield return new WaitForSeconds(0.5f);
+
+        isHurting = false;
+    }
+
+    public virtual void SetAnimationState()
+    {
+        if (movimiento == 0)
+        {
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isFalling", false);
+        }
+
+        if (rb.velocity.y == 0)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+        }
+
+        if (Mathf.Abs(movimiento) > 0 && rb.velocity.y == 0)
+        {
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isFalling", false);
+        }
+        else { animator.SetBool("isMoving", false); }
+
+        if (rb.velocity.y > 0.001f)
+        {
+            animator.SetBool("isJumping", true);
+            animator.SetBool("isFalling", false);
+        }
+
+        if (rb.velocity.y < 0.001f)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
         }
     }
 }

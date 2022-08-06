@@ -11,10 +11,12 @@ public class enemigonivel1 : MonoBehaviour, ITakeDmg
     [SerializeField] Transform target;
     private bool mirandoDerecha = true;
     [SerializeField] float agroRange;
+    [SerializeField] Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -48,8 +50,15 @@ public class enemigonivel1 : MonoBehaviour, ITakeDmg
 
         if (Health == 0)
         {
-            Destroy(gameObject);
+            animator.SetTrigger("isDead");
+            StartCoroutine("Die");
         }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     public void Daño(int DamageTaken)
