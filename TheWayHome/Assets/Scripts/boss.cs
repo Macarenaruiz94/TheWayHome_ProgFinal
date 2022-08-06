@@ -28,8 +28,6 @@ public class boss : MonoBehaviour, ITakeDmg
         if (distToPlayer < agroRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-            LookPlayer();
         }
         else
         {
@@ -37,15 +35,6 @@ public class boss : MonoBehaviour, ITakeDmg
         }
 
         Atacar();
-    }
-
-    public void LookPlayer()
-    {
-        if ((target.position.x > transform.position.x && !mirandoDerecha) || (target.position.x < transform.position.x && mirandoDerecha))
-        {
-            mirandoDerecha = !mirandoDerecha;
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-        }
     }
 
     public void Hit(int DamageTaken)

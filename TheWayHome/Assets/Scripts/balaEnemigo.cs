@@ -15,7 +15,7 @@ public class balaEnemigo : MonoBehaviour
     {
         Move();
     }
-    void Move()
+    public void Move()
     {
         Vector3 temp = transform.position;
         temp.x -= speed * Time.deltaTime;
