@@ -105,26 +105,22 @@ public abstract class playerGeneral : MonoBehaviour
         if (movimiento == 0)
         {
             animator.SetBool("isMoving", false);
-            animator.SetBool("isFalling", false);
         }
 
         if (rb.velocity.y == 0)
         {
             animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
         }
 
         if (Mathf.Abs(movimiento) > 0 && rb.velocity.y == 0)
         {
             animator.SetBool("isMoving", true);
-            animator.SetBool("isFalling", false);
         }
         else { animator.SetBool("isMoving", false); }
 
         if (rb.velocity.y > 0.001f)
         {
             animator.SetBool("isJumping", true);
-            animator.SetBool("isFalling", false);
         }
     }
 }
