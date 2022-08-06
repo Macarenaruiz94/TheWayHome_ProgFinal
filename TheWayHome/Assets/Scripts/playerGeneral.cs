@@ -48,7 +48,9 @@ public abstract class playerGeneral : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Instantiate(ProyectilPrefab, LaunchOffset.position, LaunchOffset.transform.rotation);
+            GameObject bullet = Instantiate(ProyectilPrefab);
+            bullet.GetComponent<starBalaControl>().Move(mirandoDerecha);
+            bullet.transform.position = LaunchOffset.transform.position;
         }
     }
     public virtual void Girar()

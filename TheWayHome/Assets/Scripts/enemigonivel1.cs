@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class enemigonivel1 : MonoBehaviour, ITakeDmg
 {
-    public float maxSpeed = 4f;
-    public float speed = 4f;
+    [SerializeField] float maxSpeed = 4f;
+    [SerializeField] float speed = 4f;
     private Rigidbody2D rb;
-    private int Health = 2;
-    public Transform target;
+    [SerializeField] int Health = 2;
+    [SerializeField] Transform target;
     private bool mirandoDerecha = true;
     [SerializeField] float agroRange;
 

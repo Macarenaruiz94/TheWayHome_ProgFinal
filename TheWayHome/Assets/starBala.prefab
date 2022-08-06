@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3811687556405796439}
   - component: {fileID: -2725791622125011316}
   - component: {fileID: -2406311840098934329}
-  - component: {fileID: -3971240026527230432}
+  - component: {fileID: 1053221780567996579}
   m_Layer: 0
   m_Name: starBala
   m_TagString: Bala
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  rb: {fileID: -3971240026527230432}
+  rb: {fileID: 1053221780567996579}
 --- !u!58 &-2406311840098934329
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ CircleCollider2D:
   m_Offset: {x: -0.013523579, y: -0.027047157}
   serializedVersion: 2
   m_Radius: 0.27486324
---- !u!50 &-3971240026527230432
+--- !u!50 &1053221780567996579
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -130,9 +130,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6

@@ -6,14 +6,14 @@ public class starBalaControl : MonoBehaviour
 {
     public float speed = 5f;
     public Rigidbody2D rb;
-    void Update()
-    {
-        Move();
-    }
 
-    void Move()
+    public void Move(bool mirandoDerecha)
     {
-        rb.velocity = transform.right * speed;
+        if(mirandoDerecha)
+        {
+            rb.velocity = new Vector2(speed, 0);
+        } else { rb.velocity = new Vector2(-speed, 0); }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

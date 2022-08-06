@@ -1417,6 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   speed: 4
+  Health: 2
   target: {fileID: 1511977725}
   agroRange: 10
 --- !u!50 &492212580
@@ -2125,6 +2126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   speed: 4
+  Health: 2
   target: {fileID: 1511977725}
   agroRange: 10
 --- !u!50 &682815678
@@ -2615,6 +2617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   speed: 4
+  Health: 2
   target: {fileID: 1511977725}
   agroRange: 10
 --- !u!1 &931136067
@@ -4452,8 +4455,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623536329}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 80.01194, y: 2.1415792, z: 2.3900414}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 87.66, y: 2.63, z: 2.3900414}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1997412954}
   m_RootOrder: 1
@@ -4492,9 +4495,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.000000059604645}
   serializedVersion: 2
-  m_Radius: 0.64
+  m_Radius: 0.5423327
 --- !u!114 &1623536334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4509,6 +4512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   speed: 4
+  Health: 4
   target: {fileID: 1511977725}
   agroRange: 10
 --- !u!1 &1657092262
@@ -5269,6 +5273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   speed: 4
+  Health: 2
   target: {fileID: 1511977725}
   agroRange: 10
 --- !u!50 &1799880474
