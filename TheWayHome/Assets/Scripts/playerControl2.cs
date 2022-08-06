@@ -8,6 +8,7 @@ public class playerControl2 : playerGeneral
     void Update()
     {
         Movement();
+        SetAnimationState();
     }
 
     public override void Movement()
@@ -21,7 +22,9 @@ public class playerControl2 : playerGeneral
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Instantiate(ProyectilPrefab, LaunchOffset2.position, LaunchOffset2.transform.rotation);
+            GameObject bullet = Instantiate(ProyectilPrefab);
+            bullet.GetComponent<starBalaControl>().Move(mirandoDerecha);
+            bullet.transform.position = LaunchOffset2.transform.position;
         }
     }
 }

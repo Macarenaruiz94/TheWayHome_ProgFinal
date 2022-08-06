@@ -16,7 +16,7 @@ public abstract class playerGeneral : MonoBehaviour
     public Transform LaunchOffset;
     public GameObject ProyectilPrefab;
     Rigidbody2D rb;
-    private bool mirandoDerecha = true;
+    public bool mirandoDerecha = true;
     private bool isHurting;
 
     private void Start()
@@ -125,12 +125,6 @@ public abstract class playerGeneral : MonoBehaviour
         {
             animator.SetBool("isJumping", true);
             animator.SetBool("isFalling", false);
-        }
-
-        if (rb.velocity.y < 0.001f)
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", true);
         }
     }
 }
